@@ -1,6 +1,3 @@
-/* eslint-disable prefer-arrow-callback */
-/* eslint-disable promise/no-nesting */
-/* eslint-disable promise/always-return */
 let functions = require('firebase-functions');
 let admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
