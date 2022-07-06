@@ -2,56 +2,56 @@
 Notification for makesurvey application
 
 
-1. ## ` `**Uygulamamızda Firebase Funcktion ve Cloud Messaging**
+ ## **Uygulamamızda Firebase Funcktion ve Cloud Messaging**
 Firebase fonksiyon hizmetini kullana bilmek için Node.js kullandık. Node.js, JavaScript ile server side uygulamalar yazabileceğimiz, Joyent tarafından 2009 yılında geliştirilmeye başlanmış bir Javascript Runtime platformudur. Firebase fonksiyonları Node.js ortamında kullanabilmek için metodunu terminalde çağırırız.
 
 ![](Aspose.Words.fea9e3b5-880d-441c-b546-da54c98eab66.044.png)
 
-*Şekil 38 Node.js terminalden firebase eklenmesi*
+*Node.js terminalden firebase eklenmesi
 
 Fonksiyonları kullanabilmek için Node.js üstünden login oluyoruz.
 
 ![](Aspose.Words.fea9e3b5-880d-441c-b546-da54c98eab66.045.png)
 
-*Şekil 39 Node.js üstünden giriş yapma*
+* Node.js üstünden giriş yapma
 
 Metodunu terminalde çağırıp Google hesabımızla giriş yaptık. 
 
 ![](Aspose.Words.fea9e3b5-880d-441c-b546-da54c98eab66.046.png)
 
-*Şekil 40 Firebase fonksiyon dosyası oluşturma*
+* Firebase fonksiyon dosyası oluşturma
 
 Metodunu terminalde çağırdık. Bu metot bize yazacağımız program hakkında sorular sorar. Örneğin kullanacağımız dili biz javascript dilini seçtik. İşlemler bittikten sonra bize hazır bir dosya gelir.  Functions klasörün altında index.js kodu altında fonksiyonlarımızı yazıyoruz.
 
 ![](Aspose.Words.fea9e3b5-880d-441c-b546-da54c98eab66.047.png)
 
-*Şekil 41 onCreate komutu*
+* onCreate komutu
 
 Şekildeki kod bloğunda tanımladığımız veri tabanı yoluna ne zaman bir veri eklenirse tetiklen komutu devreye girer. Ne zaman bir kullanıcı anket yanıtlarsa bu komut tetiklenir.
 
 ![](Aspose.Words.fea9e3b5-880d-441c-b546-da54c98eab66.048.png)
 
-*Şekil 42 Söz oluşturma* 
+* Söz oluşturma
 
-` `Bir söz oluşturulup veri tabanımızdan kullanıcının kendine ait jetonu alınır. Bu jeton uygulamamızın içinde olan MyFirebaseInstanceIDService isimli servisimizde oluşturulur.
+Bir söz oluşturulup veri tabanımızdan kullanıcının kendine ait jetonu alınır. Bu jeton uygulamamızın içinde olan MyFirebaseInstanceIDService isimli servisimizde oluşturulur.
 
 ![](Aspose.Words.fea9e3b5-880d-441c-b546-da54c98eab66.049.png)
 
-*Şekil 43 Jeton oluşturma komutu*
+* Jeton oluşturma komutu
 
 Şekildeki gibi firebase sisteminin kendine özel olan getToken metoduyla jeton alınır ve veri tabanına kaydedilir.
 
 ![](Aspose.Words.fea9e3b5-880d-441c-b546-da54c98eab66.050.png)
 
-*Şekil 44 Bildirim içeriği belirleme*
+* Bildirim içeriği belirleme
 
 Firebase fonksiyonun tanıdığı payload tanımlıyoruz. Payload içine bildirim olarak uygulamamıza ne göndereceğimizi burada belirliyoruz.
 
 ![](Aspose.Words.fea9e3b5-880d-441c-b546-da54c98eab66.051.png)
 
-*Şekil 45 Bildirimi telefona yollama*
+* Bildirimi telefona yollama
 
-Şekil 44 komutu ile mesajın kime gittiğini ve mesaj içeriğini belirliyoruz.
+Şekildeki komut ile mesajın kime gittiğini ve mesaj içeriğini belirliyoruz.
 
 Bildirim yollandıktan sonra bunu uygulamamızın fark etmesi lazım. Bu konuda devreye
 
@@ -59,13 +59,13 @@ MyFirebaseMessagingService isminde olan servisimiz giriyor.
 
 ![](Aspose.Words.fea9e3b5-880d-441c-b546-da54c98eab66.052.png)
 
-*Şekil 46 Bildirimi alan servis*
+* Bildirimi alan servis
 
 Şekildeki fonksiyon sayesinde Firebase’ten gelen bildirimleri alıyoruz. Bildirim geldiğinde tetiklenen fonksiyondur.
 
 ![](Aspose.Words.fea9e3b5-880d-441c-b546-da54c98eab66.053.png)
 
-*Şekil 47 Bildirimi kullanıcıya gösteren fonksiyondur*
+* Bildirimi kullanıcıya gösteren fonksiyondur
 
 Şekildeki kod bloğunda bildirimi tanımlıyoruz. En başta bildirime basıldığında hangi sayfanın açılacağını belirliyoruz. Daha sonra bildirim kurucu tanımlıyoruz ve özelliklerini belirliyoruz.
 
